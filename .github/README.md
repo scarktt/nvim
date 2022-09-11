@@ -27,7 +27,7 @@ Steps to try out this config
 
     git clone https://github.com/scarktt/nvim.git "$env:LOCALAPPDATA\nvim"
 
-> ️This will replace your current config located in ~\AppData\Local\nvim
+> ️ℹ️ You have to remove your current config located in ~\AppData\Local\nvim
   
 <br>
 
@@ -37,7 +37,7 @@ Steps to try out this config
 
 <summary><b>Run neovim and wait until the plugin installation ends</b></summary>
 
-> ⚠️ For a cleanner plugins installation you can remove all the files located in ~\AppData\Local\nvim-data
+> ℹ️ For a cleanner plugins installation you can remove all the files located in ~\AppData\Local\nvim-data
   
 <br>
 
