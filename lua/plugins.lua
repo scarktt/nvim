@@ -142,7 +142,7 @@ return packer.startup(function(use)
 
   use 'kdheepak/lazygit.nvim'
 
-  -- use 'ahmedkhalf/project.nvim'
+  use 'ap/vim-css-color'
 
   if PACKER_BOOTSTRAP then
       require("packer").sync()
