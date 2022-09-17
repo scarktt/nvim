@@ -35,7 +35,7 @@ Steps to try out this config
 
 <details close>
 
-<summary><b>Run neovim and wait until the plugin installation ends</b></summary>
+<summary><b>3. Run neovim and wait until the plugin installation ends</b></summary>
 
 > ℹ️ For a cleanner plugins installation you can remove all the files located in ~\AppData\Local\nvim-data
   
