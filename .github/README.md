@@ -59,6 +59,7 @@ Steps to try out this config
            │   autopairs.lua
            │   barbar.lua
            │   cmp.lua
+           │   colorizer.lua
            │   commenter.lua
            │   dashboard.lua
            │   gitsigns.lua
@@ -86,6 +87,7 @@ Steps to try out this config
 -  Insert parents, quotes and brackets in pair with [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 -  Re-orderable, auto-sizing, clickable tabs, icons and more with [Barbar](https://github.com/romgrk/barbar.nvim)
 -  Code completion with [cmp](https://github.com/hrsh7th/nvim-cmp)
+-  Color highlighter with [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 -  Code comenter with [nvim-comment](https://github.com/terrortylor/nvim-comment)
 -  Startup [Dashboard](https://github.com/glepnir/dashboard-nvim)
 -  Git decorations with [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
