@@ -3,8 +3,8 @@ if not mason_status_ok then
   return
 end
 
-local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not status_ok then
+local mason_lspconfig_status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not mason_lspconfig_status_ok then
   return
 end
 
@@ -22,8 +22,8 @@ mason.setup({
 		}
 	}
 })
-require("mason-lspconfig").setup()
-require("mason-lspconfig").setup_handlers {
+mason_lspconfig.setup()
+mason_lspconfig.setup_handlers {
   function (server_name)
       lsp_config[server_name].setup {
       on_attach = require("user.lsp.handlers").on_attach,
