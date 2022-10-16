@@ -108,10 +108,7 @@ return packer.startup(function(use)
   }
 
   -- Insert parents, quotes and brackets in pair
-  use {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-  }
+  use "windwp/nvim-autopairs"
 
   -- git
   use {
