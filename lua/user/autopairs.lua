@@ -4,3 +4,4 @@ if not ok then
 end
 
 autopairs.setup {}
+
