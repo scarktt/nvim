@@ -101,10 +101,8 @@ return packer.startup(function(use)
       { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' },
       { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' },
-      { 'tzachar/cmp-tabnine', after = "nvim-cmp", run='powershell ./install.ps1' },
     },
-    config = [[require('user.cmp')]],
-    event = 'InsertEnter *',
+    config = [[require('user.cmp')]]
   }
 
   -- Insert parents, quotes and brackets in pair
