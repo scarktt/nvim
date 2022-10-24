@@ -50,12 +50,12 @@ Steps to try out this config
 
     │   init.lua
     │
-    └───lua
+    └─── 📂 lua
        │   keymaps.lua
        │   options.lua
        │   plugins.lua
        │
-       └───user
+       └──- 📂 user
            │   autopairs.lua
            │   barbar.lua
            │   cmp.lua
@@ -71,12 +71,12 @@ Steps to try out this config
            │   tree.lua
            │   treesitter.lua
            │
-           ├───colorschemes
+           ├─── 📂 colorschemes
            │       init.lua
            │       nightfox.lua
            │       tokyonight.lua
            │
-           └───lsp
+           └─── 📂 lsp
                    handlers.lua
                    init.lua
                    mason-lspconfig.lua
