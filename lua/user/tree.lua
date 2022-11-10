@@ -20,7 +20,7 @@ nvim_tree.setup({
     "alpha",
   },
   filters = {
-    custom = { ".git" },
+    custom = { ".git", "__pycache__", ".DS_Store" },
     exclude = { ".gitignore" },
   },
   update_cwd = true,
