@@ -102,7 +102,7 @@ return packer.startup(function(use)
       { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' },
     },
-    config = [[require('user.cmp')]]
+    config = [[require('user.cmp')]],
   }
 
   -- Insert parents, quotes and brackets in pair

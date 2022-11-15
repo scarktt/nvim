@@ -12,7 +12,6 @@ opt.numberwidth = 2
 opt.signcolumn = 'yes:1'
 opt.termguicolors = true
 opt.relativenumber = true
-opt.paste = true
 opt.clipboard = "unnamedplus"
 
 opt.updatetime = 300 
@@ -39,6 +38,7 @@ opt.writebackup = false
 opt.guifont = "FiraCode Nerd Font:h12"
 opt.list = true
 opt.listchars = { space = '⋅', tab = "| ", eol = '↴' }
+-- vim.opt.guifont = { "Dank Mono", "h14" }
 
 -- g.did_load_filetypes = 1
 -- g.loaded_python_provider = 0
