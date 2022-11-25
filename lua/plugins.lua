@@ -144,6 +144,21 @@ return packer.startup(function(use)
 
   use 'norcalli/nvim-colorizer.lua'
 
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+    config = function()
+      require('user.markdown')
+    end,
+  }
+
+  -- use {
+  --   "iamcco/markdown-preview.nvim",
+  --   run = "cd app && npm install",
+  --   setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+  --   ft = { "markdown" },
+  -- }
+
   if PACKER_BOOTSTRAP then
       require("packer").sync()
   end
