@@ -44,8 +44,13 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", options)
 -- split window
 vim.keymap.set('n', '<leader>wh', "<cmd>split<cr>", options)
 vim.keymap.set('n', '<leader>wv', "<cmd>vsplit<cr>", options)
-vim.keymap.set('n', '<leader>th', "<cmd>split<cr> <cmd>te pwsh.exe<cr>", options)
-vim.keymap.set('n', '<leader>tv', "<cmd>vsplit<cr> <cmd>te pwsh.exe<cr>", options)
+if vim.fn.has('wsl') then
+  vim.keymap.set('n', '<leader>th', "<cmd>split<cr> <cmd>te wsl.exe -d Ubuntu<cr>", options)
+  vim.keymap.set('n', '<leader>tv', "<cmd>vsplit<cr> <cmd>te wsl.exe -d Ubuntu<cr>", options)
+else
+  vim.keymap.set('n', '<leader>th', "<cmd>split<cr> <cmd>te pwsh.exe<cr>", options)
+  vim.keymap.set('n', '<leader>tv', "<cmd>vsplit<cr> <cmd>te pwsh.exe<cr>", options)
+end
 
 -- save and quite
 vim.keymap.set('n', '<leader>fs', "<cmd>w<cr>", options)
