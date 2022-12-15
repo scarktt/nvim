@@ -12,10 +12,14 @@ Steps to try out this config
 
 <summary><b>1. Install the dependencies</b></summary>
   
-- [Neovim](https://github.com/neovim/neovim/releases/tag/v0.7.2) v0.7.2
-- Some [Nerd Font](https://www.nerdfonts.com/)
+- Windows
+  - [Neovim](https://github.com/neovim/neovim/releases/tag/v0.7.2) v0.7.2
+  > Note: I tried to use LSP on neovim nightly (installed through chocolatey) without success.
 
-> Note: I tried to use LSP on neovim nightly (installed through chocolatey) without success.
+- Linux
+  - [Neovim](https://github.com/neovim/neovim/releases/tag/v0.8.1) v0.8.1
+
+- Some [Nerd Font](https://www.nerdfonts.com/)
 
 <br>
 
@@ -25,10 +29,16 @@ Steps to try out this config
 
 <summary><b>2. Clone the repo</b></summary>
 
+- Windows
+
     git clone https://github.com/scarktt/nvim.git "$env:LOCALAPPDATA\nvim"
 
-> ️ℹ️ You have to remove your current config located in ~\AppData\Local\nvim
-  
+    > ️ℹ️ You have to remove your current config located in ~\AppData\Local\nvim
+
+- Linux
+
+    git clone https://github.com/scarktt/nvim.git ~/.config/nvim/
+
 <br>
 
 </details>
@@ -36,6 +46,8 @@ Steps to try out this config
 <details close>
 
 <summary><b>3. Run neovim and wait until the plugin installation ends</b></summary>
+
+- Windows
 
 > ℹ️ For a cleanner plugins installation you can remove all the files located in ~\AppData\Local\nvim-data
   
@@ -66,6 +78,7 @@ Steps to try out this config
            │   indent-blankline.lua
            │   lspkind_icons.lua
            │   lualine.lua
+           │   markdown.lua
            │   notify.lua
            │   telescope.lua
            │   tree.lua
@@ -99,4 +112,4 @@ Steps to try out this config
 -  Language highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 -  LSP config with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 -  Language servers installer with [mason](https://github.com/williamboman/mason.nvim)
-
+-  Markdown preview on browser with [markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
