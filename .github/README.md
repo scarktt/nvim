@@ -13,11 +13,11 @@ Steps to try out this config
 <summary><b>1. Install the dependencies</b></summary>
   
 - Windows
-  - [Neovim](https://github.com/neovim/neovim/releases/tag/v0.7.2) v0.7.2
+  - [Neovim v0.7.2](https://github.com/neovim/neovim/releases/tag/v0.7.2)
   > Note: I tried to use LSP on neovim nightly (installed through chocolatey) without success.
 
 - Linux
-  - [Neovim](https://github.com/neovim/neovim/releases/tag/v0.8.1) v0.8.1
+  - [Neovim Nightly](https://github.com/neovim/neovim/releases/tag/v0.8.1)
 
 - Some [Nerd Font](https://www.nerdfonts.com/)
 
@@ -31,13 +31,13 @@ Steps to try out this config
 
 - Windows
 
-    git clone https://github.com/scarktt/nvim.git "$env:LOCALAPPDATA\nvim"
+    ``git clone https://github.com/scarktt/nvim.git "$env:LOCALAPPDATA\nvim"``
 
     > ️ℹ️ You have to remove your current config located in ~\AppData\Local\nvim
 
 - Linux
 
-    git clone https://github.com/scarktt/nvim.git ~/.config/nvim/
+    ``git clone https://github.com/scarktt/nvim.git ~/.config/nvim/``
 
 <br>
 
