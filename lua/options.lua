@@ -7,14 +7,15 @@ opt.mouse = 'a'
 opt.wrap = true
 opt.hidden = true
 opt.number = true
-opt.scrolloff = 9 
+opt.scrolloff = 9
 opt.numberwidth = 2
 opt.signcolumn = 'yes:1'
 opt.termguicolors = true
 opt.relativenumber = true
 opt.clipboard = "unnamedplus"
+opt.cursorline= true
 
-opt.updatetime = 300 
+opt.updatetime = 300
   
 opt.splitbelow = true
 opt.splitright = true
@@ -30,7 +31,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.inccommand = "nosplit"
 opt.pumheight = 10
-opt.completeopt = "menuone,noinsert,noselect" 
+opt.completeopt = "menuone,noinsert,noselect"
 opt.swapfile = false
 opt.undofile = true
 opt.backup = false
