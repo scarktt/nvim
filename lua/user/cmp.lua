@@ -8,6 +8,10 @@ if not snip_status_ok then
   return
 end
 
+vim.api.nvim_set_hl(0, "CmpItemKindVariable", { fg = "#c678dd" })
+vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = "#fb4934" })
+vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#98c379" })
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -15,15 +19,26 @@ cmp.setup({
     end
   },
 
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'luasnip' },
+    { name = 'buffer', keyword_lenght = 3 },
+    { name = 'nvim_lua' },
+    { name = 'cmp_tabnine' },
+    { name = 'path' },
+  }),
+
   formatting = {
     format = function(entry, vim_item)
        -- load lspkind icons
        vim_item.kind = string.format(
           "%s %s",
-          require("user.lspkind_icons").icons[vim_item.kind],
+          require("user.lspkind_icons").icons[vim_item.kind] or "",
           vim_item.kind
        )
 
+       -- load source name in menu
        vim_item.menu = ({
           nvim_lsp = "[LSP]",
           nvim_lua = "[api]",
@@ -32,13 +47,24 @@ cmp.setup({
           cmp_tabnine = "[TabNine]",
        })[entry.source.name]
 
+       -- load return type from LSP
+       local item = entry:get_completion_item()
+       -- log.debug(item)
+
+       if item.detail then
+         print(1)
+         vim_item.menu = item.detail
+       end
+
        return vim_item
     end,
   },
+
   window = {
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
+
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -57,16 +83,6 @@ cmp.setup({
             cmp.select_prev_item()
     end
     end, { "i", "s" }),
-  }),
-
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'luasnip' },
-    { name = 'buffer', keyword_lenght = 3 },
-    { name = 'nvim_lua' },
-    { name = 'cmp_tabnine' },
-    { name = 'path' },
   }),
 
   experimental = {
