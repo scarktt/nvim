@@ -29,13 +29,17 @@ Steps to try out this config
 
 <summary><b>2. Clone the repo</b></summary>
 
+To find out where the neovim config files are located, you need to go into neovim and type:
+
+    :echo stdpath('config')
+
 - Windows
 
     ``git clone https://github.com/scarktt/nvim.git "$env:LOCALAPPDATA\nvim"``
 
-    > ️ℹ️ You have to remove your current config located in ~\AppData\Local\nvim
+    > ️ℹ️ You have to remove your current plugins located in ~\AppData\Local\nvim
 
-- Linux
+- Linux (Tested on Manjaro and MacOS)
 
     ``git clone https://github.com/scarktt/nvim.git ~/.config/nvim/``
 
@@ -47,9 +51,15 @@ Steps to try out this config
 
 <summary><b>3. Run neovim and wait until the plugin installation ends</b></summary>
 
+Before start neovim it is necessary to remove any previous package.
+
 - Windows
 
 > ℹ️ For a cleanner plugins installation you can remove all the files located in ~\AppData\Local\nvim-data
+
+- Linux
+
+> ️ℹ️ You have to remove your current plugins located in ~/.local/share/nvim/
   
 <br>
 
@@ -87,6 +97,8 @@ Steps to try out this config
            ├─── 📂 colorschemes
            │       init.lua
            │       nightfox.lua
+           │       everforest.lua
+           │       gruvbox-material.lua
            │       tokyonight.lua
            │
            └─── 📂 lsp
@@ -111,5 +123,14 @@ Steps to try out this config
 -  File explorer within nvim with [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua)
 -  Language highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 -  LSP config with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
--  Language servers installer with [mason](https://github.com/williamboman/mason.nvim)
+-  Language servers, linters, and formatters installer with [mason](https://github.com/williamboman/mason.nvim)
 -  Markdown preview on browser with [markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
+
+## LSP Servers, Linters and Formaters Setup
+--------------------
+
+To install a language server like python-lsp-server you have to start Mason plugin and install it from there:
+
+    :Mason
+
+![Mason plugin manager example screenshot](./mason.png)
