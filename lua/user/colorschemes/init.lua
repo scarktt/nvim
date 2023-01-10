@@ -19,4 +19,6 @@
 --   exclude = {}, -- table: groups you don't want to clear
 -- })
 
-require("user.colorschemes.nightfox")
+-- require("user.colorschemes.nightfox")
+require("user.colorschemes.everforest")
+

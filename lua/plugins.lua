@@ -51,6 +51,8 @@ return packer.startup(function(use)
 	use 'tiagovla/tokyodark.nvim'
 	use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
 	use 'xiyaowong/nvim-transparent'
+  use 'sainnhe/everforest'
+  use 'sainnhe/gruvbox-material'
 
 	-- Language highlighting
 	use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
