@@ -124,13 +124,55 @@ Before start neovim it is necessary to remove any previous package.
 -  Language highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 -  LSP config with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 -  Language servers, linters, and formatters installer with [mason](https://github.com/williamboman/mason.nvim)
+-  To use lspconfig more easily with mason use the extension [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 -  Markdown preview on browser with [markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
 
 ## LSP Servers, Linters and Formaters Setup
 --------------------
+
+### Installation
 
 To install a language server like python-lsp-server you have to start Mason plugin and install it from there:
 
     :Mason
 
 ![Mason plugin manager example screenshot](./mason.png)
+
+### Server Customization
+
+You can update the server-specific configuration during the configuration of the mason-lspconfig handlers:
+
+> `handlers` is a table where the keys are the name of an lspconfig server, and the values are the function to be called when that server is ready to be set up.
+
+`/lua/plugins-config/lsp/mason-lspconfig.lua`
+
+In this example, the default Emmet server configuration is being overridden so that Emmet is added to buffers that hold typescript and javascript files:
+
+```lua
+mason_lspconfig.setup_handlers {
+
+  function (server_name)
+    -- We are overriding the default Emmet server setup handler
+    -- to have access to all html tags inside .ts and .js files
+    if server_name == "emmet_ls" then
+      lsp_config["emmet_ls"].setup {
+        filetypes = {'html', 'typescript', 'javascript'},
+        root_dir = lsp_config.util.find_git_ancestor,
+        on_attach = require("plugins-config.lsp.handlers").on_attach,
+        capabilities = require("plugins-config.lsp.handlers").capabilities,
+      }
+    else
+      lsp_config[server_name].setup {
+        on_attach = require("plugins-config.lsp.handlers").on_attach,
+        capabilities = require("plugins-config.lsp.handlers").capabilities,
+      }
+    end
+
+  end
+
+}
+```
+
+![LspInfo of a javascript file screenshot](./lspinfo.png)
+
+> Note: It is necessary to use the `lspconfig` server names, not `mason's` package names. You can see the name mapping list [here](https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md).
