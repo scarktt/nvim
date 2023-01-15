@@ -17,3 +17,7 @@ treesitter.setup({
 
 local compilers = require("nvim-treesitter.install")
 compilers.compilers = { "clang", "gcc" }
+
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldenable = false -- Disable folding at startup
