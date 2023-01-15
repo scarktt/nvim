@@ -8,6 +8,10 @@ vim.api.nvim_set_keymap('n', '<Leader>gh', '<cmd>Dashboard<cr>', opts)
 
 local home = os.getenv('HOME')
 
+if home == nil then
+  home = '~'
+end
+
 dashboard.preview_file_path = home .. '/.config/nvim/static/neovim.cat'
 dashboard.preview_file_height = 11
 dashboard.preview_file_width = 70
