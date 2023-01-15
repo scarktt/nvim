@@ -13,7 +13,9 @@ Steps to try out this config
 <summary><b>1. Install the dependencies</b></summary>
   
 - Windows specific
-  - [C/C++ Compiler](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support)
+  - C/C++ Compiler through [Mingw toolchain](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support#mingw-toolchain)
+
+<br>
 
 - [Neovim stable version](https://github.com/neovim/neovim/releases/tag/stable)
 - Some [Nerd Font](https://www.nerdfonts.com/)
