@@ -38,7 +38,7 @@ To find out where the neovim config files are located, you need to go into neovi
 ```bash
 git clone git@github.com:scarktt/nvim.git "$env:LOCALAPPDATA\nvim"
 ```
-    > ️ℹ️ You have to remove your current plugins located in ~\AppData\Local\nvim
+> ️ℹ️ You have to remove your current plugins located in ~\AppData\Local\nvim
 
 - Linux (Tested on Manjaro and MacOS)
 
