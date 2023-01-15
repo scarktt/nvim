@@ -49,10 +49,8 @@ cmp.setup({
 
        -- load return type from LSP
        local item = entry:get_completion_item()
-       -- log.debug(item)
 
        if item.detail then
-         print(1)
          vim_item.menu = item.detail
        end
 
