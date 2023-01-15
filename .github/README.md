@@ -12,14 +12,12 @@ Steps to try out this config
 
 <summary><b>1. Install the dependencies</b></summary>
   
-- Windows
-  - [Neovim v0.7.2](https://github.com/neovim/neovim/releases/tag/v0.7.2)
-  > Note: I tried to use LSP on neovim nightly (installed through chocolatey) without success.
+- Windows specific
+  - [C/C++ Compiler](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support)
 
-- Linux
-  - [Neovim Nightly](https://github.com/neovim/neovim/releases/tag/v0.8.1)
-
+- [Neovim stable version](https://github.com/neovim/neovim/releases/tag/stable)
 - Some [Nerd Font](https://www.nerdfonts.com/)
+
 
 <br>
 
@@ -35,13 +33,16 @@ To find out where the neovim config files are located, you need to go into neovi
 
 - Windows
 
-    ``git clone https://github.com/scarktt/nvim.git "$env:LOCALAPPDATA\nvim"``
-
+```bash
+git clone git@github.com:scarktt/nvim.git "$env:LOCALAPPDATA\nvim"
+```
     > ️ℹ️ You have to remove your current plugins located in ~\AppData\Local\nvim
 
 - Linux (Tested on Manjaro and MacOS)
 
-    ``git clone https://github.com/scarktt/nvim.git ~/.config/nvim/``
+```bash
+git clone git@github.com:scarktt/nvim.git ~/.config/nvim/
+```
 
 <br>
 
