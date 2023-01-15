@@ -104,14 +104,14 @@ return packer.startup(function(use)
       { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' },
     },
-    config = [[require('user.cmp')]],
+    config = [[require('plugins-config.cmp')]],
   }
 
   -- Insert parents, quotes and brackets in pair
   use {
     "windwp/nvim-autopairs",
     config = function()
-      require('user.autopairs')
+      require('plugins-config.autopairs')
     end,
   }
 
@@ -120,7 +120,7 @@ return packer.startup(function(use)
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require('user.gitsigns')
+      require('plugins-config.gitsigns')
     end,
   }
 
@@ -128,7 +128,7 @@ return packer.startup(function(use)
     "nvim-telescope/telescope.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
-      require('user.telescope')
+      require('plugins-config.telescope')
     end,
   }
 
@@ -150,7 +150,7 @@ return packer.startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
     config = function()
-      require('user.markdown')
+      require('plugins-config.markdown')
     end,
   }
 
