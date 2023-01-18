@@ -96,7 +96,6 @@ return packer.startup(function(use)
           require("luasnip.loaders.from_vscode").lazy_load()
         end,
       },
-      { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' },
       { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
       { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
@@ -104,8 +103,10 @@ return packer.startup(function(use)
       { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' },
     },
-    config = [[require('plugins-config.cmp')]],
+    -- config = [[require('plugins-config.cmp')]],
   }
+
+  use 'hrsh7th/cmp-nvim-lsp'
 
   -- Insert parents, quotes and brackets in pair
   use {
