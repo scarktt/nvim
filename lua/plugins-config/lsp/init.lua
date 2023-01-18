@@ -6,3 +6,4 @@ end
 require("plugins-config.lsp.mason-lspconfig")
 require("plugins-config.lsp.handlers").setup()
 
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]

@@ -53,7 +53,7 @@ local function lsp_highlight_document(client)
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]],
+    ]] ,
       false
     )
   end
@@ -93,11 +93,11 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local status_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+local status_ok, cmp_nvim_lsp_ = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
   print('handlers:' .. tostring(status_ok))
 else
-  M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+  M.capabilities = cmp_nvim_lsp_.default_capabilities(capabilities)
 end
 
 return M
