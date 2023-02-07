@@ -14,11 +14,6 @@ nvim_tree.setup({
   hijack_directories = {
     enable = false,
   },
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
-  },
   filters = {
     custom = { ".git", "__pycache__", ".DS_Store" },
     exclude = { ".gitignore", ".github", ".env" },
