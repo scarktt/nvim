@@ -21,7 +21,7 @@ nvim_tree.setup({
   },
   filters = {
     custom = { ".git", "__pycache__", ".DS_Store" },
-    exclude = { ".gitignore", ".github" },
+    exclude = { ".gitignore", ".github", ".env" },
   },
   update_cwd = true,
   renderer = {
