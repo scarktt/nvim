@@ -3,16 +3,37 @@ if not ok then
   return
 end
 
-local actions = require "telescope.actions"
+local sorters, actions, previewers = require('telescope.sorters'), require('telescope.actions'),
+    require('telescope.previewers')
+
+local rip_grep_config = {
+  'rg',
+  '--no-heading',
+  '--with-filename',
+  '--line-number',
+  '--column',
+  '--smart-case',
+}
 
 telescope.setup {
   defaults = {
+    prompt_position = "top",
+    initial_mode = 'insert',
     prompt_prefix = "  ",
     selection_caret = "❯ ",
     sorting_strategy = "ascending",
+    color_devicons = true,
+    file_sorter = sorters.get_fzy_sorter,
+    generic_sorter = sorters.get_fzy_sorter,
+    file_previewer = previewers.vim_buffer_cat.new,
+    grep_previewer = previewers.vim_buffer_vimgrep.new,
+    qflist_previewer = previewers.vim_buffer_qflist.new,
+    vimgrep_arguments = rip_grep_config,
     mappings = {
-      n = {
-        ["q"] = actions.close,
+      i = {
+        ["<leader>q"] = actions.close,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous
       },
     },
     file_ignore_patterns = {
@@ -42,19 +63,21 @@ telescope.setup {
     },
   },
   extensions = {
-    -- fzf = {
-    --   fuzzy = true, -- false will only do exact matching
-    --   override_generic_sorter = true, -- override the generic sorter
-    --   override_file_sorter = true, -- override the file sorter
-    --   case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-    --   -- the default case_mode is "smart_case"
-    -- }
+    fzy_native = {
+      override_generic_sorter = false,
+      override_file_sorter = true,
+    },
   }
 }
 
--- telescope.load_extension("fzf")
+-- Load Telescope extensions
+telescope.load_extension('fzy_native')
+
+telescope.load_extension('file_browser')
+
 -- telescope.load_extension("projects")
 
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>Telescope find_files<cr>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>fb', '<cmd>Telescope buffers<cr>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>w', '<cmd>Telescope live_grep<cr>', opts)
