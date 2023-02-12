@@ -4,7 +4,6 @@ if not ok then
 end
 
 treesitter.setup({
-  ensure_installed = { "python", "javascript", "typescript", "vue", "css", "html", "json", "markdown", "regex", "vim", "yaml", "http" },
   ensure_installed = { "c", "lua", "vim", "help", "python", "javascript", "vue", "css", "html", "json", "markdown",
     "regex", "vim", "yaml", "http" },
   sync_install = false,
@@ -17,9 +16,18 @@ treesitter.setup({
   autotag = { enable = true },
 })
 
-local compilers = require("nvim-treesitter.install")
-compilers.compilers = { "clang", "gcc" }
+local status_ok, compilers_install = pcall(require, "nvim-treesitter.install")
+if status_ok then
+  compilers_install.prefer_git = false
+  compilers_install.compilers = { "clang", "gcc" }
+  -- compilers_install.compilers = { "gcc" }
+end
 
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldenable = false -- Disable folding at startup
+vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
+  group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
+  callback = function()
+    vim.opt.foldmethod     = 'expr'
+    vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
+    vim.o.foldenable       = false -- Disable folding at startup
+  end
+})
