@@ -5,6 +5,8 @@ end
 
 treesitter.setup({
   ensure_installed = { "python", "javascript", "typescript", "vue", "css", "html", "json", "markdown", "regex", "vim", "yaml", "http" },
+  ensure_installed = { "c", "lua", "vim", "help", "python", "javascript", "vue", "css", "html", "json", "markdown",
+    "regex", "vim", "yaml", "http" },
   sync_install = false,
   auto_install = true,
   highlight = {
