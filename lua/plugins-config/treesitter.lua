@@ -3,9 +3,20 @@ if not ok then
   return
 end
 
-treesitter.setup({
+local os_name = require('utils').get_current_os()
+local ensure_installed = {}
+
+if string.find(os_name, "unix") then
   ensure_installed = { "c", "lua", "vim", "help", "python", "javascript", "vue", "css", "html", "json", "markdown",
-    "regex", "vim", "yaml", "http" },
+    "regex", "vim", "yaml", "http", "php" }
+else
+    -- windows path
+  ensure_installed = { "c", "lua", "vim", "help", "python", "javascript", "css", "json", "markdown",
+    "regex", "vim", "http" }
+end
+
+treesitter.setup({
+  ensure_installed = ensure_installed,
   sync_install = false,
   auto_install = true,
   highlight = {
@@ -20,7 +31,6 @@ local status_ok, compilers_install = pcall(require, "nvim-treesitter.install")
 if status_ok then
   compilers_install.prefer_git = false
   compilers_install.compilers = { "clang", "gcc" }
-  -- compilers_install.compilers = { "gcc" }
 end
 
 vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {

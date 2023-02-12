@@ -10,7 +10,7 @@ vim.g.mapleader = ' '
 
 local options = { noremap = true, silent = true }
 local exp_options = { noremap = true, silent = true, expr=true }
-local os_name = os.execute('uname -a')
+local os_name = require('utils').get_current_os()
 
 -- Normal --
 -- avoid yank with x
@@ -67,7 +67,7 @@ vim.keymap.set('n', '<leader>.', "<cmd>noh<cr>", options)
 vim.keymap.set("n", "<Leader>r", ":%s///g<Left><Left>", options)
 
 -- open file explorer in the current dir
-if string.find(os_name, "linux") then
+if string.find(os_name, "unix") then
     vim.keymap.set('n', '<leader>f.', "<cmd>!open .<cr>", options)
 else
     -- windows path
