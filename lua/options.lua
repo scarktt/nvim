@@ -3,6 +3,10 @@ local opt = vim.opt
 
 g.mapleader = ' '
 
+opt.encoding      = 'utf-8'
+opt.fileencoding  = 'utf-8'
+opt.fileencodings = 'utf-8,ucs-bom,gb18030,gbk,gb2312,cp936'
+
 opt.mouse = 'a'
 opt.wrap = true
 opt.hidden = true
