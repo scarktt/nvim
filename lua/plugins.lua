@@ -188,6 +188,8 @@ return packer.startup(function(use)
     end
   }
 
+  use { "akinsho/toggleterm.nvim", tag = '*' }
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
