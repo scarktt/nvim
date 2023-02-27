@@ -19,8 +19,8 @@ lualine.setup {
     -- disabled_filetypes = { 'packer', 'NvimTree' },
   },
   sections = {
-    -- lualine_a = {'mode', custom},
-    lualine_a = {require('auto-session-library').current_session_name},
+    lualine_a = {'mode', custom},
+    -- lualine_a = {require('auto-session-library').current_session_name},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = { "encoding", "fileformat", "filetype" },
