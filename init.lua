@@ -5,7 +5,6 @@ end
 require('options')
 require('keymaps')
 require('plugins')
--- require('plugins-config.auto-session')
 require('plugins-config.colorschemes')
 require('plugins-config.colorizer')
 require('plugins-config.lsp')

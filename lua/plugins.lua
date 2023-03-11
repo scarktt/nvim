@@ -178,16 +178,6 @@ return packer.startup(function(use)
   -- For laravel
   use 'jwalton512/vim-blade'
 
-  use {
-    'rmagatti/auto-session',
-    config = function()
-      require("auto-session").setup {
-        log_level = "error",
-        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
-      }
-    end
-  }
-
   use { "akinsho/toggleterm.nvim", tag = '*' }
 
   use "folke/which-key.nvim"
