@@ -80,7 +80,7 @@ nvim_tree.setup({
   },
   update_focused_file = {
     enable = true,
-    update_cwd = true,
+    update_cwd = false,
     ignore_list = {},
   },
   git = {
@@ -88,11 +88,11 @@ nvim_tree.setup({
     ignore = true,
     timeout = 500,
   },
-  -- actions = {
-  --   open_file = {
-  --     quit_on_open = true,
-  --   }
-  -- },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    }
+  },
   view = {
     width = 30,
     -- height = 30,
@@ -103,8 +103,8 @@ nvim_tree.setup({
       custom_only = false,
       list = {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
+        { key = "h",                  cb = tree_cb "close_node" },
+        { key = "v",                  cb = tree_cb "vsplit" },
       },
     },
     number = false,
@@ -113,7 +113,6 @@ nvim_tree.setup({
 })
 
 local function open_nvim_tree(data)
-
   -- buffer is a directory
   local directory = vim.fn.isdirectory(data.file) == 1
 
@@ -134,7 +133,7 @@ local function open_nvim_tree(data)
   require("nvim-tree.api").tree.open()
 end
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 -- Keybindings
-vim.keymap.set('n', '<leader>n', "<cmd>NvimTreeToggle<cr>", options)
+vim.keymap.set('n', '<leader>n', "<cmd>NvimTreeToggle<cr>")
