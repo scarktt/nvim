@@ -67,7 +67,6 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   -- Buffers navigation and tabline
-  use 'romgrk/barbar.nvim'
 
   -- Luanine for statusline
   use 'nvim-lualine/lualine.nvim'
