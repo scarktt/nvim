@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   -- Buffers navigation and tabline
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
   -- Luanine for statusline
   use 'nvim-lualine/lualine.nvim'
