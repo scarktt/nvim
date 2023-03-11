@@ -20,9 +20,6 @@ vim.keymap.set('n', 'x', '"_x')
 vim.keymap.set('n', '+', '<C-a>')
 vim.keymap.set('n', '-', '<C-x>')
 
--- delete word backwards
--- vim.keymap.set('n', 'dw', 'vb"_d')
-
 -- select all
 vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
 
