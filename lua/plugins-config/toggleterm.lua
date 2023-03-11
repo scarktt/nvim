@@ -4,8 +4,7 @@ if not is_ok then
 end
 
 toggleterm.setup {
-  size = 13,
-  open_mapping = [[tt]],
+  size = 14,
   shade_filetypes = {},
   shade_terminals = true,
   shading_factor = 1,
@@ -13,3 +12,6 @@ toggleterm.setup {
   persist_size = true,
   direction = 'horizontal'
 }
+vim.keymap.set('n', 'tt', "<cmd>ToggleTerm<cr>", { desc = '[T]oggle [T]erminal' })
+vim.keymap.set('n', 'tl', "<cmd>ToggleTermSendCurrentLine<cr>")
+vim.keymap.set('n', 'tv', "<cmd>ToggleTermSendVisualSelection<cr>")
