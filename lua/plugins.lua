@@ -48,11 +48,14 @@ return packer.startup(function(use)
   use { "nvim-lua/plenary.nvim", module = "plenary" }
 
   -- Colorschemes
-  use 'tiagovla/tokyodark.nvim'
-  use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
-  use 'xiyaowong/nvim-transparent'
-  use 'sainnhe/everforest'
   use 'sainnhe/gruvbox-material'
+  use 'Shatur/neovim-ayu'
+  -- with transparent options
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use 'sainnhe/everforest'
+  use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
+  use 'tiagovla/tokyodark.nvim'
+  use 'navarasu/onedark.nvim'
 
   -- Language highlighting
   use {
