@@ -6,13 +6,8 @@ end
 nightfox.setup({
   options = {
     transparent = true,
-    terminal_colors = true,
-    styles = {
-      comments = "italic",
-      keywords = "bold",
-      types = "italic,bold",
-    }
   }
 })
 
-vim.cmd("colorscheme nordfox")
+-- vim.cmd("colorscheme nordfox")
+vim.cmd("colorscheme nightfox")

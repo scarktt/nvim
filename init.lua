@@ -5,8 +5,6 @@ end
 require('options')
 require('keymaps')
 require('plugins')
--- require('plugins-config.autopairs')
--- require('plugins-config.barbar')
 require('plugins-config.bufferline')
 require('plugins-config.colorschemes')
 require('plugins-config.cmp')
