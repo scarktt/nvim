@@ -61,10 +61,8 @@ telescope.setup {
         },
       },
     },
-    pickers = {
-      colorscheme = {
-        enable_preview = true
-      }
+    colorscheme = {
+      enable_preview = true
     }
   },
   extensions = {
