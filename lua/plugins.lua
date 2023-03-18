@@ -70,7 +70,7 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   -- Buffers navigation and tabline
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
   -- Luanine for statusline
   use 'nvim-lualine/lualine.nvim'
@@ -105,11 +105,11 @@ return packer.startup(function(use)
           require("luasnip.loaders.from_vscode").lazy_load()
         end,
       },
-      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' },
-      { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
+      { 'hrsh7th/cmp-buffer',                  after = 'nvim-cmp' },
+      { 'hrsh7th/cmp-path',                    after = 'nvim-cmp' },
+      { 'hrsh7th/cmp-nvim-lua',                after = 'nvim-cmp' },
+      { 'hrsh7th/cmp-nvim-lsp',                after = 'nvim-cmp' },
+      { 'saadparwaiz1/cmp_luasnip',            after = 'nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' },
     },
   }

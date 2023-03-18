@@ -5,16 +5,14 @@ end
 
 bufferline.setup {
   options = {
-    diagnostics = "nvim_lsp",
-    mode = "buffers", -- set to "tabs" to only show tabpages instead
-    numbers = function(opts)
-      return string.format('%s', opts.raise(opts.ordinal))
-    end,                                 -- "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
+    mode = "buffers",                    -- set to "tabs" to only show tabpages instead
+    numbers = "ordinal",                 -- "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
     close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
     sort_by = 'insert_at_end',
     separator_style = "thin",            -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
+    show_buffer_icons = true,           -- disable filetype icons for buffers
     offsets = {
       {
         filetype = "NvimTree",
@@ -28,14 +26,14 @@ bufferline.setup {
         toggle_hidden_on_enter = true -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
       },
       items = {
-        {
-          name = "controllers",        -- Mandatory
-          highlight = { sp = "blue" }, -- Optional
-          priority = 2,                -- determines where it will appear relative to other groups (Optional)
-          matcher = function(buf)      -- Mandatory
-            return buf.filename:match('%Controller') or buf.filename:match('%controller')
-          end,
-        },
+        -- {
+        --   name = "controllers",        -- Mandatory
+        --   highlight = { sp = "blue" }, -- Optional
+        --   priority = 2,                -- determines where it will appear relative to other groups (Optional)
+        --   matcher = function(buf)      -- Mandatory
+        --     return buf.filename:match('%Controller') or buf.filename:match('%controller')
+        --   end,
+        -- },
         {
           name = "tests",              -- Mandatory
           highlight = { sp = "blue" }, -- Optional
