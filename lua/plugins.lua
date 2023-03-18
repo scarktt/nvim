@@ -194,6 +194,20 @@ return packer.startup(function(use)
 
   use 'gelguy/wilder.nvim'
 
+  use {
+    'mawkler/modicator.nvim',
+    after = 'catppuccin/nvim', -- Add your colorscheme plugin here
+    setup = function()
+      -- These are required for Modicator to work
+      vim.o.cursorline = true
+      vim.o.number = true
+      vim.o.termguicolors = true
+    end,
+    config = function()
+      require('modicator').setup()
+    end
+  }
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
