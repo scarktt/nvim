@@ -152,6 +152,14 @@ return packer.startup(function(use)
     run = "make",
   }
 
+  use {
+    'paopaol/telescope-git-diffs.nvim',
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+    },
+  }
+
   use { 'glepnir/dashboard-nvim' }
 
   -- Pretty notifications

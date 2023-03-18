@@ -80,6 +80,7 @@ telescope.load_extension('file_browser')
 
 telescope.load_extension("project")
 
+telescope.load_extension('git_diffs')
 
 local find_files_from_root = function()
   local opts = {}
@@ -94,6 +95,7 @@ local find_files_in_current_buffer = function()
   })
 end
 
+-- with builtin keymaps
 vim.keymap.set('n', 'ff', find_files_from_root, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<Leader>fb', builtin.buffers, { desc = '[F]ind opened [B]uffers' })
 vim.keymap.set('n', '<Leader>/', find_files_in_current_buffer, { desc = '[/] Fuzzily search in current buffer' })
@@ -103,4 +105,6 @@ vim.keymap.set('n', '<Leader>w', builtin.live_grep, { desc = 'Find [W]ord' })
 vim.keymap.set('n', '<Leader>cs', builtin.colorscheme, { desc = '[C]olor [S]cheme' })
 vim.keymap.set('n', '<Leader>c', builtin.registers)
 
+-- with plugin keymaps 
 vim.keymap.set('n', '<Leader>p', ":lua require'telescope'.extensions.project.project{}<CR>")
+vim.keymap.set('n', 'dv', ":lua require('telescope').extensions.git_diffs.diff_commits()<CR>")
