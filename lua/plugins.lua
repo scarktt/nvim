@@ -192,6 +192,8 @@ return packer.startup(function(use)
 
   use { "akinsho/toggleterm.nvim", tag = '*' }
 
+  use 'gelguy/wilder.nvim'
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
