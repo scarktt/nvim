@@ -1,7 +1,6 @@
 # Neovim with Lua
 
-![Dashboard creenshot](./dashboard.png)
-![Code example screenshot](./code.png)
+![Nvim screenshot](./nvim_1.png)
 
 ## QuickStart
 --------------------
@@ -80,7 +79,7 @@ Before start neovim it is necessary to remove any previous package.
        │   options.lua
        │   plugins.lua
        │
-       └──- 📂 user
+       └──- 📂 plugins-config
            │   autopairs.lua
            │   barbar.lua
            │   cmp.lua
@@ -96,6 +95,7 @@ Before start neovim it is necessary to remove any previous package.
            │   telescope.lua
            │   tree.lua
            │   treesitter.lua
+           │   ...
            │
            ├─── 📂 colorschemes
            │       init.lua
@@ -103,6 +103,7 @@ Before start neovim it is necessary to remove any previous package.
            │       everforest.lua
            │       gruvbox-material.lua
            │       tokyonight.lua
+           │       ...
            │
            └─── 📂 lsp
                    handlers.lua
@@ -179,3 +180,13 @@ mason_lspconfig.setup_handlers {
 ![LspInfo of a javascript file screenshot](./lspinfo.png)
 
 > Note: It is necessary to use the `lspconfig` server names, not `mason's` package names. You can see the name mapping list [here](https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md).
+
+## 📸 Screenshots
+
+|terminal|cmp example|
+|-|-|
+|<img height="210px" src="nvim_5.png">|<img height="210px" src="nvim_2.png">|
+
+|diagnostic|live grep search|
+|-|-|
+|<img height="210px" src="nvim_3.png">|<img height="210px" src="nvim_4.png">|
