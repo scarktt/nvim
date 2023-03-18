@@ -31,4 +31,4 @@ vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { no
 
 vim.keymap.set('n', 'tt', "<cmd>ToggleTerm<cr>", { desc = '[T]oggle [T]erminal' })
 vim.keymap.set('n', 'tl', "<cmd>ToggleTermSendCurrentLine<cr>")
-vim.keymap.set('n', 'tv', "<cmd>ToggleTermSendVisualSelection<cr>")
+vim.keymap.set('n', 'tv', "<cmd>ToggleTermSendVisualLines<cr>")
