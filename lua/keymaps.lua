@@ -9,8 +9,6 @@
 vim.g.mapleader = ' '
 
 local options = { noremap = true, silent = true }
-local exp_options = { noremap = true, silent = true, expr=true }
-local os_name = require('utils').get_current_os()
 
 -- Normal --
 -- avoid yank with x
@@ -41,13 +39,6 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", options)
 -- split window
 vim.keymap.set('n', '<leader>wh', "<cmd>split<cr>", options)
 vim.keymap.set('n', '<leader>wv', "<cmd>vsplit<cr>", options)
-if vim.fn.has('wsl') then
-  vim.keymap.set('n', '<leader>th', "<cmd>split<cr> <cmd>te wsl.exe -d Ubuntu<cr>", options)
-  vim.keymap.set('n', '<leader>tv', "<cmd>vsplit<cr> <cmd>te wsl.exe -d Ubuntu<cr>", options)
-else
-  vim.keymap.set('n', '<leader>th', "<cmd>split<cr> <cmd>te pwsh.exe<cr>", options)
-  vim.keymap.set('n', '<leader>tv', "<cmd>vsplit<cr> <cmd>te pwsh.exe<cr>", options)
-end
 
 -- save and quite
 vim.keymap.set('n', '<leader>fs', "<cmd>w<cr>", options)
@@ -64,12 +55,7 @@ vim.keymap.set('n', '<leader>.', "<cmd>noh<cr>", options)
 vim.keymap.set("n", "<Leader>r", ":%s///g<Left><Left>", options)
 
 -- open file explorer in the current dir
-if string.find(os_name, "unix") then
-    vim.keymap.set('n', '<leader>f.', "<cmd>!open .<cr>", options)
-else
-    -- windows path
-    vim.keymap.set('n', '<leader>f.', "<cmd>!start explorer /select,%:p<cr>", options)
-end
+vim.keymap.set('n', '<leader>f.', "<cmd>!open .<cr>", options)
 
 -- Visual --
 -- stay in indent mode
