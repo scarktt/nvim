@@ -6,14 +6,48 @@ end
 local function custom()
   return [[力]]
 end
+-- stylua: ignore
+local colors = {
+  blue       = '#7DC4E4',
+  darkblue   = '#13191F',
+  green      = '#A6DA95',
+  yellow     = '#EED49F',
+  cyan       = '#79dac8',
+  black      = '#080808',
+  white      = '#c6c6c6',
+  red        = '#ED8796',
+  orange     = '#F5A97F',
+  violet     = '#C6A0F6',
+  grey       = '#373E4D',
+}
+
+local scar_theme = {
+  normal = {
+    a = { fg = colors.black, bg = colors.blue },
+    b = { fg = colors.white, bg = colors.darkblue },
+    c = { fg = colors.white },
+  },
+
+  insert = { a = { fg = colors.black, bg = colors.green } },
+  visual = { a = { fg = colors.black, bg = colors.violet } },
+  select = { a = { fg = colors.black, bg = colors.orange } },
+  replace = { a = { fg = colors.black, bg = colors.red } },
+  terminal = { a = { fg = colors.black, bg = colors.red } },
+
+  inactive = {
+    a = { fg = colors.white, bg = colors.darkblue },
+    b = { fg = colors.white, bg = colors.darkblue },
+    c = { fg = colors.white, bg = colors.darkblue },
+  },
+}
 
 lualine.setup {
   options = {
     icons_enabled = true,
-    -- theme = 'onedark',
-    theme = 'auto',
     component_separators = { left = '', right = ''},
     section_separators = { left = ' ', right = ''},
+    theme = scar_theme,
+    -- theme = 'auto',
     disabled_filetypes = { },
     always_divide_middle = true,
     -- disabled_filetypes = { 'packer', 'NvimTree' },
