@@ -64,12 +64,7 @@ vim.keymap.set('n', '<leader>.', "<cmd>noh<cr>", options)
 vim.keymap.set("n", "<Leader>r", ":%s///g<Left><Left>", options)
 
 -- open file explorer in the current dir
-if string.find(os_name, "unix") then
-    vim.keymap.set('n', '<leader>f.', "<cmd>!open .<cr>", options)
-else
-    -- windows path
-    vim.keymap.set('n', '<leader>f.', "<cmd>!start explorer /select,%:p<cr>", options)
-end
+vim.keymap.set('n', '<leader>f.', "<cmd>!start explorer /select,%:p<cr>", options)
 
 -- Visual --
 -- stay in indent mode
