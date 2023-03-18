@@ -78,7 +78,7 @@ telescope.load_extension('fzy_native')
 
 telescope.load_extension('file_browser')
 
--- telescope.load_extension("projects")
+telescope.load_extension("project")
 
 -- Find files from current file's project
 -- using .git as a project root
@@ -105,3 +105,5 @@ vim.keymap.set('n', '<Leader>r', builtin.oldfiles, { desc = '[R]ecently opened f
 vim.keymap.set('n', '<Leader>w', builtin.live_grep, { desc = 'Find [W]ord' })
 vim.keymap.set('n', '<Leader>cs', builtin.colorscheme, { desc = '[C]olor [S]cheme' })
 vim.keymap.set('n', '<Leader>c', builtin.registers)
+
+vim.keymap.set('n', '<Leader>p', ":lua require'telescope'.extensions.project.project{}<CR>")
