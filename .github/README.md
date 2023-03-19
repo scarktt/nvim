@@ -2,7 +2,7 @@
 
 ![Nvim screenshot](./nvim_1.png)
 
-## QuickStart
+## 📦 QuickStart
 --------------------
 
 Steps to try out this config
@@ -69,7 +69,7 @@ Before start neovim it is necessary to remove any previous package.
 
 **4. You're done!**
 
-## Config Layout
+## 📁 Config Layout
 --------------------
 
     │   init.lua
@@ -81,27 +81,14 @@ Before start neovim it is necessary to remove any previous package.
        │
        └──- 📂 plugins-config
            │   autopairs.lua
-           │   barbar.lua
-           │   cmp.lua
-           │   colorizer.lua
-           │   commenter.lua
-           │   dashboard.lua
-           │   gitsigns.lua
-           │   indent-blankline.lua
-           │   lspkind_icons.lua
-           │   lualine.lua
-           │   markdown.lua
-           │   notify.lua
            │   telescope.lua
-           │   tree.lua
-           │   treesitter.lua
            │   ...
+           │   treesitter.lua
+           │   wilder.lua
            │
            ├─── 📂 colorschemes
            │       init.lua
-           │       nightfox.lua
            │       everforest.lua
-           │       gruvbox-material.lua
            │       tokyonight.lua
            │       ...
            │
@@ -110,28 +97,29 @@ Before start neovim it is necessary to remove any previous package.
                    init.lua
                    mason-lspconfig.lua
 
-## Plugins list
+## ✨ Features
 --------------------
 
 -  Insert parents, quotes and brackets in pair with [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
--  Re-orderable, auto-sizing, clickable tabs, icons and more with [Barbar](https://github.com/romgrk/barbar.nvim)
+-  Buffers, tabs, icons and more with [bufferline](https://github.com/akinsho/bufferline.nvim)
 -  Code completion with [cmp](https://github.com/hrsh7th/nvim-cmp)
 -  Color highlighter with [colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 -  Code comenter with [nvim-comment](https://github.com/terrortylor/nvim-comment)
--  Startup [Dashboard](https://github.com/glepnir/dashboard-nvim)
 -  Git decorations with [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 -  Indentation guides with [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
--  Neovim statusline with [lualine](https://github.com/nvim-lualine/lualine.nvim)
+-  Bottom statusline with [lualine](https://github.com/nvim-lualine/lualine.nvim)
 -  Pretty notifications with [notify](https://github.com/rcarriga/nvim-notify)
--  File fuzzy finder with [telescope](https://github.com/nvim-telescope/telescope.nvim)
+-  File fuzzy finder and more with [telescope](https://github.com/nvim-telescope/telescope.nvim)
 -  File explorer within nvim with [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua)
 -  Language highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 -  LSP config with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 -  Language servers, linters, and formatters installer with [mason](https://github.com/williamboman/mason.nvim)
 -  To use lspconfig more easily with mason use the extension [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 -  Markdown preview on browser with [markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
+-  Curl wrapper for HTTP with [rest](https://github.com/rest-nvim/rest.nvim)
+-  Terminals inside neovim with [toggleterm](https://github.com/akinsho/toggleterm.nvim)
 
-## LSP Servers, Linters and Formaters Setup
+## 🛠️ LSP Servers, Linters and Formaters Setup
 --------------------
 
 ### Installation
