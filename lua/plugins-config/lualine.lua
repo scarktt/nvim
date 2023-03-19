@@ -3,6 +3,8 @@ if not lualine_status_ok then
   return
 end
 
+local icons = require("plugins-config.lspkind_icons")
+
 local conditions = {
   buffer_not_empty = function()
     return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
@@ -88,7 +90,11 @@ local user_name = {
 
 local custom_diff =  {
   'diff',
-  symbols = { added = ' ', modified = '柳', removed = ' ' },
+  symbols = {
+    added = icons['GitAdd'] .. ' ',
+    modified = icons['GitChange'] .. ' ',
+    removed = icons['GitDelete'] .. ' '
+  },
   diff_color = {
     added = { fg = colors.green },
     modified = { fg = colors.yellow },
@@ -110,10 +116,10 @@ local lsp = {
       if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
         return client.name
       end
-    end
+   end
     return msg
   end,
-  icon = ' lsp:',
+  icon = icons['LSP'] .. ' ',
   cond = conditions.hide_in_width,
 }
 
@@ -121,7 +127,6 @@ lualine.setup {
   options = {
     icons_enabled = true,
     theme = scar_theme,
-    -- theme = 'auto',
     component_separators = { left = "", right = "" },
     section_separators = { left = ' ', right = ''},
     disabled_filetypes = { },
@@ -131,7 +136,7 @@ lualine.setup {
     lualine_a = {'mode'},
     lualine_b = {user_name},
     lualine_c = {lsp},
-    lualine_x = { 'filename', 'diagnostics' },
+    lualine_x = { 'filetype',  'diagnostics' },
     lualine_y = {custom_diff},
     lualine_z = {'branch'}
   },

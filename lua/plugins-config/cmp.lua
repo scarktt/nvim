@@ -34,7 +34,7 @@ cmp.setup({
        -- load lspkind icons
        vim_item.kind = string.format(
           "%s %s",
-          require("plugins-config.lspkind_icons").icons[vim_item.kind] or "",
+          require("plugins-config.lspkind_icons")[vim_item.kind] or "",
           vim_item.kind
        )
 
