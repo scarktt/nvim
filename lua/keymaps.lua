@@ -57,6 +57,9 @@ vim.keymap.set("n", "<Leader>r", ":%s///g<Left><Left>", options)
 -- open file explorer in the current dir
 vim.keymap.set('n', '<leader>f.', "<cmd>!open .<cr>", options)
 
+-- format JSON into human readable form
+vim.keymap.set("n", "<leader>fo", ":%!python -m json.tool")
+
 -- Visual --
 -- stay in indent mode
 vim.keymap.set("v", "<", "<gv", options)
