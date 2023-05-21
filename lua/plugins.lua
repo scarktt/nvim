@@ -160,8 +160,6 @@ return packer.startup(function(use)
     },
   }
 
-  use { 'glepnir/dashboard-nvim' }
-
   -- Pretty notifications
   use 'rcarriga/nvim-notify'
 
