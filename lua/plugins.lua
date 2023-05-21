@@ -192,6 +192,7 @@ return packer.startup(function(use)
 
   use 'gelguy/wilder.nvim'
 
+  -- used for winbar
   use {
     'mawkler/modicator.nvim',
     after = 'catppuccin/nvim', -- Add your colorscheme plugin here
@@ -204,6 +205,8 @@ return packer.startup(function(use)
     config = function()
       require('modicator').setup()
     end
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
   }
 
   if PACKER_BOOTSTRAP then

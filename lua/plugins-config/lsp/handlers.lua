@@ -3,9 +3,9 @@ local M = {}
 M.setup = function()
   local signs = {
     { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignWarn",  text = "" },
+    { name = "DiagnosticSignHint",  text = "" },
+    { name = "DiagnosticSignInfo",  text = "" },
   }
 
   for _, sign in ipairs(signs) do
@@ -43,6 +43,15 @@ M.setup = function()
   })
 end
 
+local function attach_navic(client, bufnr)
+  vim.g.navic_silence = true
+  local status_ok, navic = pcall(require, "nvim-navic")
+  if not status_ok then
+    return
+  end
+  navic.attach(client, bufnr)
+end
+
 local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
   if client.server_capabilities.document_highlight then
@@ -53,7 +62,7 @@ local function lsp_highlight_document(client)
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]] ,
+    ]],
       false
     )
   end
@@ -83,10 +92,20 @@ local function lsp_keymaps(bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
+-- local navic_status_ok, navic = pcall(require, "nvim-navic")
+-- if navic_status_ok then
+--   navic.setup = require('plugins-config.navic')
+--   vim.o.winbar = navic.get_location()
+-- end
+
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.server_capabilities.document_formatting = false
   end
+  -- if client.server_capabilities.documentSymbolProvider and navic_status_ok then
+  --   navic.attach(client, bufnr)
+  -- end
+  attach_navic(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end
