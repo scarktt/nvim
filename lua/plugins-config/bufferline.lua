@@ -21,38 +21,38 @@ bufferline.setup {
         padding = 1,
       }
     },
-    groups = {
-      options = {
-        toggle_hidden_on_enter = true -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
-      },
-      items = {
-        -- {
-        --   name = "controllers",        -- Mandatory
-        --   highlight = { sp = "blue" }, -- Optional
-        --   priority = 2,                -- determines where it will appear relative to other groups (Optional)
-        --   matcher = function(buf)      -- Mandatory
-        --     return buf.filename:match('%Controller') or buf.filename:match('%controller')
-        --   end,
-        -- },
-        {
-          name = "tests",              -- Mandatory
-          highlight = { sp = "blue" }, -- Optional
-          priority = 2,                -- determines where it will appear relative to other groups (Optional)
-          icon = "",                -- Optional
-          matcher = function(buf)      -- Mandatory
-            return buf.filename:match('%_test') or buf.filename:match('%_spec')
-          end,
-        },
-        {
-          name = "docs",
-          highlight = { sp = "green" },
-          auto_close = false, -- whether or not close this group if it doesn't contain the current buffer
-          matcher = function(buf)
-            return buf.filename:match('%.md') or buf.filename:match('%.txt')
-          end,
-        }
-      }
-    }
+    -- groups = {
+    --   options = {
+    --     toggle_hidden_on_enter = true -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
+    --   },
+    --   items = {
+    --     -- {
+    --     --   name = "controllers",        -- Mandatory
+    --     --   highlight = { sp = "blue" }, -- Optional
+    --     --   priority = 2,                -- determines where it will appear relative to other groups (Optional)
+    --     --   matcher = function(buf)      -- Mandatory
+    --     --     return buf.filename:match('%Controller') or buf.filename:match('%controller')
+    --     --   end,
+    --     -- },
+    --     -- {
+    --     --   name = "tests",              -- Mandatory
+    --     --   highlight = { sp = "blue" }, -- Optional
+    --     --   priority = 2,                -- determines where it will appear relative to other groups (Optional)
+    --     --   icon = "",                -- Optional
+    --     --   matcher = function(buf)      -- Mandatory
+    --     --     return buf.id:match('%_test') or buf.id:match('%_spec')
+    --     --   end,
+    --     -- },
+    --     -- {
+    --     --   name = "docs",
+    --     --   highlight = { sp = "green" },
+    --     --   auto_close = false, -- whether or not close this group if it doesn't contain the current buffer
+    --     --   matcher = function(buf)
+    --     --     return buf.id:match('%.md') or buf.id:match('%.txt')
+    --     --   end,
+    --     -- }
+    --   }
+    -- }
   }
 }
 
