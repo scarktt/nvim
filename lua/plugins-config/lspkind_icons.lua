@@ -1,5 +1,3 @@
--- local M = {}
-
 return {
   Text = "",
   Method = "",
@@ -43,6 +41,6 @@ return {
   GitUntracked = "★",
   LSP = "",
   Active = "",
+  ChevronRight = "",
+  Circle = " ",
 }
-
--- return M
