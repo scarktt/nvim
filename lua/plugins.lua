@@ -69,6 +69,8 @@ return packer.startup(function(use)
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
 
+  use "tzachar/local-highlight.nvim"
+
   -- Buffers navigation and tabline
   use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
