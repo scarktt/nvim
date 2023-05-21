@@ -69,6 +69,12 @@ return packer.startup(function(use)
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
 
+  -- changes the foreground color of the current
+  -- line number based on the current Vim mode
+  use {
+    "mawkler/modicator.nvim", after = "catppuccin",
+  }
+
   use "tzachar/local-highlight.nvim"
 
   -- Buffers navigation and tabline
@@ -196,17 +202,6 @@ return packer.startup(function(use)
 
   -- used for winbar
   use {
-    'mawkler/modicator.nvim',
-    after = 'catppuccin/nvim', -- Add your colorscheme plugin here
-    setup = function()
-      -- These are required for Modicator to work
-      vim.o.cursorline = true
-      vim.o.number = true
-      vim.o.termguicolors = true
-    end,
-    config = function()
-      require('modicator').setup()
-    end
     "SmiteshP/nvim-navic",
     requires = "neovim/nvim-lspconfig"
   }
