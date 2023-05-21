@@ -6,29 +6,29 @@
 --   term_mode = "t",
 --   command_mode = "c",
 
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 local options = { noremap = true, silent = true }
 
 -- Normal --
 -- avoid yank with x
-vim.keymap.set('n', 'x', '"_x')
+vim.keymap.set("n", "x", "'_x")
 
 -- increment/decrement
-vim.keymap.set('n', '+', '<C-a>')
-vim.keymap.set('n', '-', '<C-x>')
+vim.keymap.set("n", "+", "<C-a>")
+vim.keymap.set("n", "-", "<C-x>")
 
 -- select all
-vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- new tab
-vim.keymap.set('n', 'te', ':tabedit<Return>')
+vim.keymap.set("n", "te", ":tabedit<Return>")
 
 -- navigate windows
-vim.keymap.set('n', '<c-k>', "<cmd>wincmd k<cr>", options)
-vim.keymap.set('n', '<c-j>', "<cmd>wincmd j<cr>", options)
-vim.keymap.set('n', '<c-h>', "<cmd>wincmd h<cr>", options)
-vim.keymap.set('n', '<c-l>', "<cmd>wincmd l<cr>", options)
+vim.keymap.set("n", "<C-k>", "<CMD>wincmd k<CR>", options)
+vim.keymap.set("n", "<C-j>", "<CMD>wincmd j<CR>", options)
+vim.keymap.set("n", "<C-h>", "<CMD>wincmd h<CR>", options)
+vim.keymap.set("n", "<C-l>", "<CMD>wincmd l<CR>", options)
 
 -- resize window
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", options)
@@ -37,28 +37,28 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", options)
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", options)
 
 -- split window
-vim.keymap.set('n', '<leader>wh', "<cmd>split<cr>", options)
-vim.keymap.set('n', '<leader>wv', "<cmd>vsplit<cr>", options)
+vim.keymap.set("n", "<Leader>wh", "<CMD>split<CR>", options)
+vim.keymap.set("n", "<Leader>wv", "<CMD>vsplit<CR>", options)
 
 -- save and quite
-vim.keymap.set('n', '<leader>fs', "<cmd>w<cr>", options)
-vim.keymap.set('n', '<leader>q', "<cmd>q<cr>", options)
-vim.keymap.set('n', '<leader>qq', "<cmd>q!<cr>", options)
+vim.keymap.set("n", "<Leader>fs", "<CMD>w<CR>", options)
+vim.keymap.set("n", "<Leader>q", "<CMD>q<CR>", options)
+vim.keymap.set("n", "<Leader>qq", "<CMD>q!<CR>", options)
 
 -- reload config
-vim.keymap.set('n', '<leader>rr', "<cmd>luafile %<cr>", options)
+vim.keymap.set("n", "<Leader>rr", "<CMD>luafile %<CR>", options)
 
 -- deselect matching string after search
-vim.keymap.set('n', '<leader>.', "<cmd>noh<cr>", options)
+vim.keymap.set("n", "<Leader>.", "<CMD>noh<CR>", options)
 
 -- replace all instances selected with shift + *
-vim.keymap.set("n", "<Leader>r", ":%s///g<Left><Left>", options)
+vim.keymap.set("n", "<Leader>z", ":%s///g<Left><Left>", options)
 
 -- open file explorer in the current dir
-vim.keymap.set('n', '<leader>f.', "<cmd>!open .<cr>", options)
+vim.keymap.set("n", "<Leader>f.", "<CMD>!open .<CR>", options)
 
 -- format JSON into human readable form
-vim.keymap.set("n", "<leader>fo", ":%!python -m json.tool")
+vim.keymap.set("n", "<Leader>fo", ":%!python -m json.tool")
 
 -- Visual --
 -- stay in indent mode
@@ -67,9 +67,9 @@ vim.keymap.set("v", ">", ">gv", options)
 
 -- Visual Block --
 -- replace all instances that are ONLY inside of visually selected range
-vim.keymap.set("x", "<Leader>r", ":s///g<Left><Left>", options)
+vim.keymap.set("x", "<Leader>z", ":s///g<Left><Left>", options)
 
 -- Terminal --
 -- return to normal mode
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n><cr>", options)
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n><CR>", options)
 

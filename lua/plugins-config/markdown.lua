@@ -1,4 +1,4 @@
 
 local options = { noremap = true, silent = true }
-vim.keymap.set('n', '<leader>m', "<cmd>MarkdownPreview<cr>", options)
+vim.keymap.set("n", "<Leader>m", "<CMD>MarkdownPreview<CR>", options)
 

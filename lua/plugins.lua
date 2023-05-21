@@ -23,7 +23,7 @@ vim.cmd([[
   augroup end
 ]])
 
--- Use a protected call so we don't error out on first use
+-- Use a protected call so we don"t error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
@@ -42,55 +42,55 @@ return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
   -- To improve startup time
-  use 'lewis6991/impatient.nvim'
+  use "lewis6991/impatient.nvim"
 
   -- For neovim plugins dev
   use { "nvim-lua/plenary.nvim", module = "plenary" }
 
   -- Colorschemes
-  use 'sainnhe/gruvbox-material'
-  use 'Shatur/neovim-ayu'
+  use "sainnhe/gruvbox-material"
+  use "Shatur/neovim-ayu"
   -- with transparent options
   use { "catppuccin/nvim", as = "catppuccin" }
-  use 'sainnhe/everforest'
+  use "sainnhe/everforest"
   use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
-  use 'tiagovla/tokyodark.nvim'
-  use 'navarasu/onedark.nvim'
+  use "tiagovla/tokyodark.nvim"
+  use "navarasu/onedark.nvim"
 
   -- Language highlighting
   use {
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-treesitter/nvim-treesitter",
     run = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
       ts_update()
     end,
   }
 
   -- Icons
-  use 'kyazdani42/nvim-web-devicons'
+  use "kyazdani42/nvim-web-devicons"
 
   -- changes the foreground color of the current
   -- line number based on the current Vim mode
   use {
-    "mawkler/modicator.nvim", after = "catppuccin",
+    "mawkler/modicator.nvim",
   }
 
   use "tzachar/local-highlight.nvim"
 
   -- Buffers navigation and tabline
-  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+  use { "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" }
 
-  -- Luanine for statusline
-  use 'nvim-lualine/lualine.nvim'
+  -- Lualine for statusline
+  use "nvim-lualine/lualine.nvim"
 
   -- Indentation guides
-  use 'lukas-reineke/indent-blankline.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- File search and much more
-  use { 'junegunn/fzf', run = "fzf#install()" }
+  use { "junegunn/fzf", run = "fzf#install()" }
 
   -- File explorer within nvim
-  use 'kyazdani42/nvim-tree.lua'
+  use "kyazdani42/nvim-tree.lua"
 
   -- Commenter
   use "terrortylor/nvim-comment"
@@ -104,7 +104,7 @@ return packer.startup(function(use)
 
   -- Completion
   use {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     requires = {
       {
         "L3MON4D3/LuaSnip",
@@ -113,45 +113,45 @@ return packer.startup(function(use)
           require("luasnip.loaders.from_vscode").lazy_load()
         end,
       },
-      { 'hrsh7th/cmp-buffer',                  after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-path',                    after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-nvim-lua',                after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-nvim-lsp',                after = 'nvim-cmp' },
-      { 'saadparwaiz1/cmp_luasnip',            after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' },
+      { "hrsh7th/cmp-buffer",                  after = "nvim-cmp" },
+      { "hrsh7th/cmp-path",                    after = "nvim-cmp" },
+      { "hrsh7th/cmp-nvim-lua",                after = "nvim-cmp" },
+      { "hrsh7th/cmp-nvim-lsp",                after = "nvim-cmp" },
+      { "saadparwaiz1/cmp_luasnip",            after = "nvim-cmp" },
+      { "hrsh7th/cmp-nvim-lsp-signature-help", after = "nvim-cmp" },
     },
   }
 
-  use 'hrsh7th/cmp-nvim-lsp'
+  use "hrsh7th/cmp-nvim-lsp"
 
   -- Insert parents, quotes and brackets in pair
   use {
     "windwp/nvim-autopairs",
     config = function()
-      require('plugins-config.autopairs')
+      require("plugins-config.autopairs")
     end,
   }
 
   -- git
   use {
-    'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    "lewis6991/gitsigns.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
     config = function()
-      require('plugins-config.gitsigns')
+      require("plugins-config.gitsigns")
     end,
   }
 
   use {
     "nvim-telescope/telescope.nvim",
     requires = {
-      'nvim-lua/popup.nvim',
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-file-browser.nvim',
-      'nvim-telescope/telescope-fzy-native.nvim',
-      'nvim-telescope/telescope-project.nvim',
+      "nvim-lua/popup.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+      "nvim-telescope/telescope-fzy-native.nvim",
+      "nvim-telescope/telescope-project.nvim",
     },
     config = function()
-      require('plugins-config.telescope')
+      require("plugins-config.telescope")
     end,
   }
 
@@ -161,7 +161,7 @@ return packer.startup(function(use)
   }
 
   use {
-    'paopaol/telescope-git-diffs.nvim',
+    "paopaol/telescope-git-diffs.nvim",
     requires = {
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",
@@ -169,42 +169,45 @@ return packer.startup(function(use)
   }
 
   -- Pretty notifications
-  use 'rcarriga/nvim-notify'
+  use "rcarriga/nvim-notify"
 
-  use 'kdheepak/lazygit.nvim'
+  use "kdheepak/lazygit.nvim"
 
-  use 'norcalli/nvim-colorizer.lua'
+  use "norcalli/nvim-colorizer.lua"
 
   use {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
     config = function()
-      require('plugins-config.markdown')
+      require("plugins-config.markdown")
     end,
   }
 
-  use 'mg979/vim-visual-multi'
+  use "mg979/vim-visual-multi"
 
   use {
     "rest-nvim/rest.nvim",
     requires = { "nvim-lua/plenary.nvim" },
     config = function()
-      require('plugins-config.rest')
+      require("plugins-config.rest")
     end,
   }
 
   -- For laravel
-  use 'jwalton512/vim-blade'
+  use "jwalton512/vim-blade"
 
-  use { "akinsho/toggleterm.nvim", tag = '*' }
+  use { "akinsho/toggleterm.nvim", tag = "*" }
 
-  use 'gelguy/wilder.nvim'
+  use "gelguy/wilder.nvim"
 
   -- used for winbar
   use {
     "SmiteshP/nvim-navic",
     requires = "neovim/nvim-lspconfig"
   }
+
+  use "f-person/git-blame.nvim"
+
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

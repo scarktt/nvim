@@ -20,21 +20,21 @@ cmp.setup({
   },
 
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'luasnip' },
-    { name = 'buffer', keyword_lenght = 3 },
-    { name = 'nvim_lua' },
-    { name = 'cmp_tabnine' },
-    { name = 'path' },
+    { name = "nvim_lsp" },
+    { name = "nvim_lsp_signature_help" },
+    { name = "luasnip" },
+    { name = "buffer", keyword_lenght = 3 },
+    { name = "nvim_lua" },
+    { name = "cmp_tabnine" },
+    { name = "path" },
   }),
 
   formatting = {
     format = function(entry, vim_item)
-       -- load lspkind icons
+       -- load icons
        vim_item.kind = string.format(
           "%s %s",
-          require("plugins-config.lspkind_icons")[vim_item.kind] or "",
+          require("ui.icons")[vim_item.kind] or "",
           vim_item.kind
        )
 
@@ -64,11 +64,11 @@ cmp.setup({
   },
 
   mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<C-l>'] = cmp.mapping.confirm({ select = false }),
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.abort(),
+    ["<C-l>"] = cmp.mapping.confirm({ select = false }),
     ["<C-j>"] = cmp.mapping(function(fallback)
     if cmp.visible() then
       cmp.select_next_item()

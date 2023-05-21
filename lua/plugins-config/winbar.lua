@@ -68,7 +68,7 @@ local get_gps = function()
   end
 
   if not require("utils").isempty(gps_location) then
-    return require("plugins-config.lspkind_icons").ChevronRight .. " " .. gps_location
+    return require("ui.icons").ChevronRight .. " " .. gps_location
   else
     return ""
   end
@@ -99,7 +99,7 @@ M.get_winbar = function()
   end
 
   if not utils.isempty(value) and utils.get_buf_option "mod" then
-    local mod = "%#LspCodeLens#" .. require("plugins-config.lspkind_icons").Circle .. "%*"
+    local mod = "%#LspCodeLens#" .. require("ui.icons").Circle .. "%*"
     if gps_added then
       value = value .. " " .. mod
     else

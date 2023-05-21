@@ -1,26 +1,26 @@
 local g = vim.g
 local opt = vim.opt
 
-g.mapleader = ' '
+g.mapleader = " "
 
-opt.encoding      = 'utf-8'
-opt.fileencoding  = 'utf-8'
-opt.fileencodings = 'utf-8,ucs-bom,gb18030,gbk,gb2312,cp936'
+opt.encoding      = "utf-8"
+opt.fileencoding  = "utf-8"
+opt.fileencodings = "utf-8,ucs-bom,gb18030,gbk,gb2312,cp936"
 
-opt.mouse = 'a'
+opt.mouse = "a"
 opt.wrap = true
 opt.hidden = true
 opt.number = true
 opt.scrolloff = 9
 opt.numberwidth = 2
-opt.signcolumn = 'yes:1'
+opt.signcolumn = "yes:1"
 opt.termguicolors = true
 opt.relativenumber = true
 opt.clipboard = "unnamedplus"
 opt.cursorline= true
 
 opt.updatetime = 300
-  
+
 opt.splitbelow = true
 opt.splitright = true
 opt.tabstop = 4
@@ -40,9 +40,8 @@ opt.swapfile = false
 opt.undofile = true
 opt.backup = false
 opt.writebackup = false
-opt.guifont = "FiraCode Nerd Font:h12"
 opt.list = true
-opt.listchars = { space = '⋅', tab = "| ", eol = '↴' }
+opt.listchars = { space = "⋅", tab = "| ", eol = "↴" }
 
 vim.cmd [[autocmd FileType javascript setlocal shiftwidth=2 tabstop=2]]
 vim.cmd [[autocmd FileType html setlocal shiftwidth=2 tabstop=2]]

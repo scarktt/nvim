@@ -10,10 +10,10 @@ toggleterm.setup {
   shading_factor = 1,
   start_in_insert = true,
   persist_size = true,
-  direction = 'horizontal'
+  direction = "horizontal"
 }
 
-local Terminal = require('toggleterm.terminal').Terminal
+local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({
   cmd = "lazygit",
   dir = "git_dir",
@@ -27,8 +27,8 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>g", "<CMD>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 
-vim.keymap.set('n', 'tt', "<cmd>ToggleTerm<cr>", { desc = '[T]oggle [T]erminal' })
-vim.keymap.set('n', 'tl', "<cmd>ToggleTermSendCurrentLine<cr>")
-vim.keymap.set('n', 'tv', "<cmd>ToggleTermSendVisualLines<cr>")
+vim.keymap.set("n", "tt", "<CMD>ToggleTerm<CR>", { desc = "[T]oggle [T]erminal" })
+vim.keymap.set("n", "tl", "<CMD>ToggleTermSendCurrentLine<CR>")
+vim.keymap.set("n", "tv", "<CMD>ToggleTermSendVisualLines<CR>")

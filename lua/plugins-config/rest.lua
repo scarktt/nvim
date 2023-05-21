@@ -1,6 +1,6 @@
 local rest_nvim_status_ok, rest_nvim = pcall(require, "rest-nvim")
 if not rest_nvim_status_ok then
-  print('rest not loaded')
+  print("rest not loaded")
   return
 end
 
@@ -31,8 +31,8 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = "http",
     callback = function ()
         local buff = tonumber(vim.fn.expand("<abuf>"), 10)
-        vim.keymap.set("n", "<leader>rn", rest_nvim.run, { noremap = true, buffer = buff })
-        vim.keymap.set("n", "<leader>rl", rest_nvim.last, { noremap = true, buffer = buff })
-        vim.keymap.set("n", "<leader>rp", function () rest_nvim.run(true) end, { noremap = true, buffer = buff })
+        vim.keymap.set("n", "<Leader>rn", rest_nvim.run, { noremap = true, buffer = buff })
+        vim.keymap.set("n", "<Leader>rl", rest_nvim.last, { noremap = true, buffer = buff })
+        vim.keymap.set("n", "<Leader>rp", function () rest_nvim.run(true) end, { noremap = true, buffer = buff })
     end
 })

@@ -31,7 +31,7 @@ mason_lspconfig.setup_handlers {
     -- to have access to all html tags inside .ts and .js files
     if server_name == "emmet_ls" then
       lsp_config["emmet_ls"].setup {
-        filetypes = {'html', 'typescript', 'javascript'},
+        filetypes = {"html", "typescript", "javascript"},
         root_dir = lsp_config.util.find_git_ancestor,
         on_attach = require("plugins-config.lsp.handlers").on_attach,
         capabilities = require("plugins-config.lsp.handlers").capabilities,

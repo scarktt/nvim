@@ -3,42 +3,48 @@ if not modicator_status_ok then
   return
 end
 
+local colors = require("ui.colors")
+
 modicator.setup({
   show_warnings = true,
   highlights = {
     defaults = {
-      foreground = modicator.get_highlight_fg("CursorLineNr"),
-      background = modicator.get_highlight_bg("CursorLineNr"),
+      foreground = colors.blue,
       bold = true,
       italic = true
     },
     modes = {
       ["n"] = {
-        foreground = modicator.get_highlight_fg("CursorLineNr"),
+        foreground = colors.blue,
       },
       ["i"]  = {
-        foreground = modicator.get_highlight_fg("Question"),
+        foreground = colors.green,
       },
       ["v"]  = {
-        foreground = modicator.get_highlight_fg("Type"),
+        foreground = colors.violet,
       },
       ["V"]  = {
-        foreground = modicator.get_highlight_fg("Type"),
+        foreground = colors.violet,
       },
       ["�"] = { -- This symbol is the ^V character
-        foreground = modicator.get_highlight_fg("Type"),
+        -- foreground = modicator.get_highlight_fg("Type"),
+        foreground = colors.blue,
       },
       ["s"]  = {
-        foreground = modicator.get_highlight_fg("Keyword"),
+        -- foreground = modicator.get_highlight_fg("Keyword"),
+        foreground = colors.blue,
       },
       ["S"]  = {
-        foreground = modicator.get_highlight_fg("Keyword"),
+        -- foreground = modicator.get_highlight_fg("Keyword"),
+        foreground = colors.blue,
       },
       ["R"]  = {
-        foreground = modicator.get_highlight_fg("Title"),
+        -- foreground = modicator.get_highlight_fg("Title"),
+        foreground = colors.blue,
       },
       ["c"]  = {
-        foreground = modicator.get_highlight_fg("Constant"),
+        -- foreground = modicator.get_highlight_fg("Constant"),
+        foreground = colors.blue,
       },
     },
   },
