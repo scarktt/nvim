@@ -21,17 +21,17 @@ local conditions = {
 
 -- stylua: ignore
 local colors = {
-  blue       = '#7DC4E4',
-  darkblue   = '#13191F',
-  green      = '#A6DA95',
-  yellow     = '#EED49F',
-  cyan       = '#79dac8',
-  black      = '#080808',
-  white      = '#c6c6c6',
-  red        = '#ED8796',
-  orange     = '#F5A97F',
-  violet     = '#C6A0F6',
-  grey       = '#373E4D',
+  blue     = '#7DC4E4',
+  darkblue = '#13191F',
+  green    = '#A6DA95',
+  yellow   = '#EED49F',
+  cyan     = '#79dac8',
+  black    = '#080808',
+  white    = '#c6c6c6',
+  red      = '#ED8796',
+  orange   = '#F5A97F',
+  violet   = '#C6A0F6',
+  grey     = '#373E4D',
 }
 
 local scar_theme = {
@@ -40,13 +40,11 @@ local scar_theme = {
     b = { fg = colors.white, bg = colors.darkblue },
     c = { fg = colors.white },
   },
-
   insert = { a = { fg = colors.black, bg = colors.green } },
   visual = { a = { fg = colors.black, bg = colors.violet } },
   select = { a = { fg = colors.black, bg = colors.orange } },
   replace = { a = { fg = colors.black, bg = colors.red } },
   terminal = { a = { fg = colors.black, bg = colors.red } },
-
   inactive = {
     a = { fg = colors.white, bg = colors.darkblue },
     b = { fg = colors.white, bg = colors.darkblue },
@@ -55,7 +53,7 @@ local scar_theme = {
 }
 
 local user_name = {
--- mode component
+  -- mode component
   function()
     return 'スカル'
   end,
@@ -88,7 +86,7 @@ local user_name = {
   cond = conditions.hide_in_width,
 }
 
-local custom_diff =  {
+local custom_diff = {
   'diff',
   symbols = {
     added = icons['GitAdd'] .. ' ',
@@ -116,39 +114,50 @@ local lsp = {
       if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
         return client.name
       end
-   end
+    end
     return msg
   end,
   icon = icons['LSP'] .. ' ',
   cond = conditions.hide_in_width,
 }
 
+local custom_git_blame = function(git_icon)
+  vim.g.gitblame_display_virtual_text = 0
+  local git_blame = require('gitblame')
+  if git_blame == nil then
+      return ''
+  else
+    vim.g.gitblame_date_format = '%r'
+    vim.g.gitblame_message_template = git_icon .. ' <date> • <author>'
+    return git_blame.get_current_blame_text
+  end
+end
+
 lualine.setup {
   options = {
     icons_enabled = true,
     theme = scar_theme,
     component_separators = { left = "", right = "" },
-    section_separators = { left = ' ', right = ''},
-    disabled_filetypes = { },
+    section_separators = { left = ' ', right = '' },
+    disabled_filetypes = {},
     always_divide_middle = false,
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {user_name},
-    lualine_c = {lsp},
-    lualine_x = { 'filetype',  'diagnostics' },
-    lualine_y = {custom_diff},
-    lualine_z = {'branch'}
+    lualine_a = { 'mode' },
+    lualine_b = { user_name },
+    lualine_c = { custom_git_blame(icons['Git']), lsp },
+    lualine_x = { 'filetype', 'diagnostics' },
+    lualine_y = { custom_diff },
+    lualine_z = { 'branch' }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'diagnostics'},
+    lualine_c = { 'filename' },
+    lualine_x = { 'diagnostics' },
     lualine_y = {},
     lualine_z = {}
   },
   tabline = {},
   extensions = {}
 }
-
