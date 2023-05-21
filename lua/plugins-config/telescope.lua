@@ -95,6 +95,13 @@ local find_files_in_current_buffer = function()
   })
 end
 
+local find_string_in_open_buffers = function()
+  builtin.live_grep({
+    prompt_title = 'find string in open buffers...',
+    grep_open_files = true
+  })
+end
+
 -- with builtin keymaps
 vim.keymap.set('n', 'ff', find_files_from_root, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<Leader>fb', builtin.buffers, { desc = '[F]ind opened [B]uffers' })
@@ -102,6 +109,7 @@ vim.keymap.set('n', '<Leader>/', find_files_in_current_buffer, { desc = '[/] Fuz
 
 vim.keymap.set('n', '<Leader>r', builtin.oldfiles, { desc = '[R]ecently opened files' })
 vim.keymap.set('n', '<Leader>w', builtin.live_grep, { desc = 'Find [W]ord' })
+vim.keymap.set('n', '<Leader>wo', find_string_in_open_buffers, { desc = 'Find [W]ord in [O]pen Buffers' })
 vim.keymap.set('n', '<Leader>cs', builtin.colorscheme, { desc = '[C]olor [S]cheme' })
 vim.keymap.set('n', '<Leader>c', builtin.registers)
 
